@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyanshu Dimri | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+</head>
+<body>
+  <!-- Page Loader -->
+<div id="loader">
+  <div class="loader-circle"></div>
+</div>
+
+<!-- Particle Canvas -->
+<canvas id="particles"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+  <h2 class="logo">Priyanshu</h2>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button id="themeToggle">🌙</button>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+  </div>
+</nav>
+
+ <!-- Floating Background Blobs -->
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<!-- Hero Section -->
+<section id="home" class="section hero">
+  <div class="glass-card hero-card reveal">
+    <h1>Hi, I'm Priyanshu Dimri👋</h1>
+    <h2 class="typing"></h2>
+    <a href="#contact" class="btn">Hire Me</a>
+  </div>
+</section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+  <h2 class="reveal">Skills</h2>
+  <div class="skill-container">
+    <div class="glass-card skill-card tilt-card reveal">
+      <i class="fab fa-html5 fa-2x"></i>
+      <span>HTML5</span>
+    </div>
+    <div class="glass-card skill-card tilt-card reveal">
+      <i class="fab fa-css3-alt fa-2x"></i>
+      <span>CSS3</span>
+    </div>
+    <div class="glass-card skill-card tilt-card reveal">
+      <i class="fab fa-js-square fa-2x"></i>
+      <span>JavaScript</span>
+    </div>
+    <div class="glass-card skill-card tilt-card reveal">
+      <i class="fab fa-react fa-2x"></i>
+      <span>React</span>
+    </div>
+    <div class="glass-card skill-card tilt-card reveal">
+      <i class="fab fa-git-alt fa-2x"></i>
+      <span>Git</span>
+    </div>
+  </div>
+</section>
+<section id="experience" class="section">
+  <h2 class="reveal">Experience & Timeline</h2>
+  <div class="timeline">
+    <!-- Timeline Item -->
+    <div class="timeline-item reveal">
+      <div class="timeline-icon">
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <div class="timeline-content">
+        <h3>Frontend Developer Intern</h3>
+        <span>Jan 2025 - Jun 2025</span>
+        <p>Worked on responsive web apps, implemented interactive UI components, and optimized performance for multiple browsers.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-icon">
+        <i class="fas fa-laptop-code"></i>
+      </div>
+      <div class="timeline-content">
+        <h3>Personal Projects</h3>
+        <span>2025 - Present</span>
+        <p>Built multiple projects like Portfolio Website, Weather App, and Todo App using HTML, CSS, JS, and React.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-icon">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <div class="timeline-content">
+        <h3>Computer Science Graduate</h3>
+        <span>2022 - Present</span>
+        <p>Graduated from Guru Ram Das Institute, focusing on web development and modern frontend technologies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects" class="section">
+  <h2 class="reveal">Projects</h2>
+   <br>
+  <div class="project-container">
+    <!-- Portfolio Website -->
+    <div class="glass-card project-card tilt-card reveal" onclick="openModal('Portfolio Website', 'Modern responsive portfolio with glassmorphism, dark/light mode, and animations.')">
+      <i class="fas fa-laptop-code fa-3x"></i>
+      <h3>Portfolio Website</h3>
+      <div class="project-buttons">
+        <a href="https://your-portfolio-live-link.com" target="_blank" class="btn small">Live Demo</a>
+        <a href="https://github.com/yourusername/portfolio" target="_blank" class="btn small">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Weather App -->
+    <div class="glass-card project-card tilt-card reveal" onclick="openModal('Weather App', 'Real-time weather application using OpenWeather API with interactive UI.')">
+      <i class="fas fa-cloud-sun-rain fa-3x"></i>
+      <h3>Weather App</h3>
+      <div class="project-buttons">
+        <a href="https://your-weatherapp-live.com" target="_blank" class="btn small">Live Demo</a>
+        <a href="https://github.com/yourusername/weather-app" target="_blank" class="btn small">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Todo App -->
+    <div class="glass-card project-card tilt-card reveal" onclick="openModal('Todo App', 'Interactive Todo Application with local storage and drag-drop features.')">
+      <i class="fas fa-list-check fa-3x"></i>
+      <h3>Todo App</h3>
+      <div class="project-buttons">
+        <a href="https://your-todo-live.com" target="_blank" class="btn small">Live Demo</a>
+        <a href="https://github.com/yourusername/todo-app" target="_blank" class="btn small">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content glass-card reveal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
+    <div id="modalButtons"></div>
+  </div>
+</div>
+<!-- Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content glass-card">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
+  </div>
+</div>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <br>
+
+    <div class="glass-card contact-card">
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p id="formMessage"></p>
+    </div>
+  </section>
+  <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  <footer class="footer">
+  <div class="footer-content glass-card">
+    <h3>Priyanshu Dimri</h3>
+    <p>Frontend Developer</p>
+
+    <div class="social-links">
+      <a href="https://github.com/dimripriyanshu12" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+      <a href="https://www.linkedin.com/in/priyanshu-dimri-229436397/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+
+    <p class="footer-email">📧 dimripriyanshu12@gmail.com</p>
+    <p class="footer-copy">© 2026 Priyanshu Dimri. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
