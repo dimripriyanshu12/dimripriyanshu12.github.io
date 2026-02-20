@@ -372,4 +372,28 @@ function animateFooterParticles() {
   requestAnimationFrame(animateFooterParticles);
 }
 
+
 animateFooterParticles();
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const status = document.getElementById("formStatus");
+  status.textContent = "Sending...";
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  emailjs.send("service_c3ghh95","template_raqqjjt",{
+    from_name: name,
+    from_email: email,
+    message: message
+  },"WSD3u1PyxuZvNQKVS")
+  .then(function(response){
+    status.style.color = "#4BB543";
+    status.textContent = "Message sent successfully!";
+    document.getElementById("contactForm").reset();
+  }, function(error){
+    status.style.color = "#FF4C4C";
+    status.textContent = "Oops! Something went wrong.";
+  });
+});
